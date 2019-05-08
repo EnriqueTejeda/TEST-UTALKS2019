@@ -104,7 +104,7 @@ def runApp(containerName, tag, dockerHubUser, httpPort){
     } catch(error){
     print 'Error Stop Container Prod'
     }finally{
-      sh "docker run -d --rm -p $httpPort:80 --name $containerName  $dockerHubUser/$containerName:$tag"
+      sh "docker run -d --rm -e VIRTUAL_HOST=rooteate.com -p 8081:80 --name $containerName  $dockerHubUser/$containerName:$tag"
       echo "Application started on port: $httpPort (http)"
     }
 
