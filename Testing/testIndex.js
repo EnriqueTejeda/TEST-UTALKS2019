@@ -25,7 +25,7 @@ describe('Test Index.html ', () => {
         await driver.get('http://enriquetejeda.com:8089');
         let link = await driver.findElement({css:'.price-2'});
         text = await link.getText();
-        expect(text).to.equal('$20');
+        expect(text).to.equal('$25');
 
     });
 
